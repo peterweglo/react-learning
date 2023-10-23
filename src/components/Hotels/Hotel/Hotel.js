@@ -1,6 +1,13 @@
+import PropTypes from 'prop-types';
 import styles from './Hotel.module.scss';
 import hotelImg from '../../../assets/inages/building-66789_1280.jpg';
 
+const propTypes = {
+  name: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+};
 const Hotel = (props) => {
   return (
     <div className={`card ${styles.hotel} `}>
@@ -31,5 +38,7 @@ const Hotel = (props) => {
     </div>
   );
 };
+
+Hotel.propTypes = propTypes;
 
 export default Hotel;

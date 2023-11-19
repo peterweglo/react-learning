@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import ThemeContext from '../../../context/ThemeContext';
 
 const propTypes = {
   onSearch: PropTypes.func.isRequired,
@@ -27,10 +28,13 @@ const Searchbar = (props) => {
         type='text'
         placeholder='szukaj'
       />
-
-      <button onClick={search} className={`ml-1 btn btn-${props.theme}`}>
-        Szukaj
-      </button>
+      <ThemeContext.Consumer>
+        {({ theme }) => (
+          <button onClick={search} className={`ml-1 btn btn-${theme}`}>
+            Szukaj
+          </button>
+        )}
+      </ThemeContext.Consumer>
     </div>
   );
 };

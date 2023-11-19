@@ -1,10 +1,16 @@
-const LoadingIcon = (props) => {
+import ThemeContext from '../../../context/ThemeContext';
+
+const LoadingIcon = () => {
   return (
-    <div className='d-flex justify-content-center'>
-      <div className={`spinner-border text-${props.theme}`} role='status'>
-        <span className='sr-only'></span>
-      </div>
-    </div>
+    <ThemeContext.Consumer>
+      {({ theme }) => (
+        <div className='d-flex justify-content-center'>
+          <div className={`spinner-border text-${theme}`} role='status'>
+            <span className='sr-only'></span>
+          </div>
+        </div>
+      )}
+    </ThemeContext.Consumer>
   );
 };
 

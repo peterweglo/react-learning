@@ -1,6 +1,12 @@
-const Footer = (props) => {
+import ThemeContext from '../../context/ThemeContext';
+
+const Footer = () => {
   return (
-    <div className={`text-center m-3 text-${props.theme}`}>Noclegi 2023</div>
+    <ThemeContext.Consumer>
+      {({ theme }) => (
+        <div className={`text-center m-3 text-${theme}`}>Noclegi 2023</div>
+      )}
+    </ThemeContext.Consumer>
   );
 };
 

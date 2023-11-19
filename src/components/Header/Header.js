@@ -1,12 +1,6 @@
 import styles from './Header.module.scss';
-import Searchbar from './Searchbar/Serachbar';
 
 const Header = (props) => {
-  return (
-    <header className={`${styles.header} container`}>
-      <Searchbar onSearch={props.onSearch} />
-    </header>
-  );
+  return <header className={`${styles.header}`}>{props.children}</header>;
 };
-
 export default Header;

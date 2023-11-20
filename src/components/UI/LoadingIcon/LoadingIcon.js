@@ -1,16 +1,14 @@
 import ThemeContext from '../../../context/ThemeContext';
+import { useContext } from 'react';
 
 const LoadingIcon = () => {
+  const theme = useContext(ThemeContext);
   return (
-    <ThemeContext.Consumer>
-      {({ theme }) => (
-        <div className='d-flex justify-content-center'>
-          <div className={`spinner-border text-${theme}`} role='status'>
-            <span className='sr-only'></span>
-          </div>
-        </div>
-      )}
-    </ThemeContext.Consumer>
+    <div className="d-flex justify-content-center">
+      <div className={`spinner-border text-${theme.color}`} role="status">
+        <span className="sr-only"></span>
+      </div>
+    </div>
   );
 };
 

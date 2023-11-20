@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './Hotel.module.scss';
 import hotelImg from '../../../assets/inages/building-66789_1280.jpg';
 import ThemeContext from '../../../context/ThemeContext';
+import { useContext } from 'react';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -10,35 +11,32 @@ const propTypes = {
   description: PropTypes.string.isRequired,
 };
 const Hotel = (props) => {
+  const theme = useContext(ThemeContext);
   return (
     <div className={`card ${styles.hotel} `}>
-      <div className='card-body'>
-        <div className='row'>
-          <div className='col-4'>
-            <img src={hotelImg} alt='' className='img-fluid img-thumbnail' />
+      <div className="card-body">
+        <div className="row">
+          <div className="col-4">
+            <img src={hotelImg} alt="" className="img-fluid img-thumbnail" />
           </div>
-          <div className='col-8'>
-            <div className='row'>
-              <div className='col'>
+          <div className="col-8">
+            <div className="row">
+              <div className="col">
                 <p className={styles.title}>{props.name}</p>
-                <span className='badge bg-light text-dark'>{props.city}</span>
+                <span className="badge bg-light text-dark">{props.city}</span>
               </div>
-              <div className='col text-end'>
+              <div className="col text-end">
                 <h5>Ocena: {props.rating}</h5>
-                <ThemeContext.Consumer>
-                  {({ theme }) => (
-                    <a
-                      href='#'
-                      className={`btn btn-${theme} mt-2 px-5 float-end`}
-                    >
-                      Pokaż
-                    </a>
-                  )}
-                </ThemeContext.Consumer>
+                <a
+                  href="#"
+                  className={`btn btn-${theme.color} mt-2 px-5 float-end`}
+                >
+                  Pokaż
+                </a>
               </div>
             </div>
           </div>
-          <div className='col-12'>
+          <div className="col-12">
             <p className={styles.description}>{props.description}</p>
           </div>
         </div>

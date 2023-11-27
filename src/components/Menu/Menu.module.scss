@@ -7,7 +7,16 @@
 
 .menuItem {
   display: inline-block;
-  text-align: left;
+  margin-right: 15px;
+}
+
+.menuItem a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.menuItem a:hover {
+  color: #000;
 }
 
 .menuContainer {

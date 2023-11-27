@@ -1,8 +1,9 @@
 import React from 'react';
 
 const ThemeContext = React.createContext({
-  theme: 'primary',
-  onClick: () => {},
+  color: 'primary',
+  changeTheme: () => {},
 });
+ThemeContext.displayName = 'ThemeContext';
 
 export default ThemeContext;
